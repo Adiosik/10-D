@@ -1,0 +1,27 @@
+plugins {
+    id 'application'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("com.miglayout:miglayout-swing:5.0")
+    implementation("net.sevecek:sevecek-net-utils:0.9.1")
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.2'
+}
+
+application {
+    mainClass = "cz.czechitas.lekce10.HlavniProgram"
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
